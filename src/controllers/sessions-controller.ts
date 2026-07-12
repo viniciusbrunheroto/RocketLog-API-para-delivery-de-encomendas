@@ -35,9 +35,11 @@ class SessionsController {
 
         const { secret, expiresIn } = authConfig.jwt
 
-        const token = jwt.sign({role: user.role ?? "customer" }, secret, {
-            subject: user.id,
+        const token = jwt.sign({
+            role: user.role ?? "customer",
+        }, secret, {
             expiresIn: expiresIn,
+            subject: user.id
         })
 
         const {password: hashedPassword, ...userWithoutPassword } = user

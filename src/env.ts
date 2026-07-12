@@ -13,5 +13,3 @@ const envSchema = z.object({
 
 export const env = envSchema.parse(process.env)
 
-console.log(process.env.PORT)
-console.log(env)
