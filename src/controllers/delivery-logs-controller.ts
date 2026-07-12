@@ -7,7 +7,7 @@ class DeliveryLogsController {
     async create(request: Request, response: Response) {
 
         const bodySchema = z.object({
-            delivery_id: z.string().uuid(),
+            delivery_id: z.uuid(),
             description: z.string()
         })
 
